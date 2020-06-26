@@ -43,4 +43,4 @@
 - [ ] As a Supplier, I can sell a book
 - [ ] As a Supplier, I can match lost books that they have in stock in order to facilitate lookup and sale
 - [ ] As a Supplier, I can match damaged books that they have in stock to facilitate lookup and sale
-- [ ] As a Supplier, I can
+- [ ] As a Supplier, I can restock all damaged and lost books that they have available with one click
