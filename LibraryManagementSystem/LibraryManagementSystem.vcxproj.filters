@@ -13,17 +13,11 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\Windows">
-      <UniqueIdentifier>{c83c6d02-ae27-4112-ba37-7e1ce7888334}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\WindowsFrames">
-      <UniqueIdentifier>{dfefb3a9-80dd-4b08-b85e-da7e8e93d7c6}</UniqueIdentifier>
+    <Filter Include="Header Files\windows">
+      <UniqueIdentifier>{1138fde8-c278-42cb-abed-a8f96731e3e2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cApp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -33,7 +27,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IntroductionWindow.h">
-      <Filter>Header Files\Windows</Filter>
+      <Filter>Header Files\windows</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
 
 #include "wx/wx.h"
 
-class IntroductionWindow: public wxFrame
+class IntroductionWindow : public wxFrame
 {
 private:
 	const int WIDTH{ 316 };
@@ -12,17 +12,17 @@ public:
 	// todo: retrive the application name from a constant
 	IntroductionWindow() :wxFrame(
 		// parent
-		nullptr, 
+		nullptr,
 		// pid of the app
-		wxID_ANY, 
+		wxID_ANY,
 		// title
 		"Placeholder Application Name",
 		// location of top corner
 		// todo: center on the screen
 		wxPoint(100, 50),
 		// size
-		wxSize(WIDTH, HEIGHT)
-		) {
+		wxSize(316, 578)
+	) {
 	}
 };
 

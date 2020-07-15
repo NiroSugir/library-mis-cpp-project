@@ -3,15 +3,18 @@
 #include "wx/wx.h"
 #include "IntroductionWindow.h"
 
-class cApp:public wxApp
+class cApp :public wxApp
 {
 private:
-	IntroductionWindow* introduction_window{nullptr};
+	IntroductionWindow* introduction_window{ nullptr };
 
 public:
-	cApp();
-	~cApp();
+	virtual bool OnInit()
+	{
+		introduction_window = new IntroductionWindow();
+		introduction_window->Show();
 
-	virtual bool OnInit();
+		return true;
+	}
 };
 
