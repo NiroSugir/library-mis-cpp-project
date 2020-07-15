@@ -9,12 +9,27 @@ private:
 	IntroductionWindow* introduction_window{ nullptr };
 
 public:
-	virtual bool OnInit()
+	bool OnInit()
 	{
 		introduction_window = new IntroductionWindow();
-		introduction_window->Show();
+		introduction_window->Show(true);
+
+		// bring the screen to the front 
+		introduction_window->Raise();
 
 		return true;
 	}
+
+	// clean up all objects created by the app
+	int onExit()
+	{
+		if (introduction_window) {
+			delete introduction_window;
+			introduction_window = nullptr;
+		}
+
+		return 0;
+	}
+
 };
 
