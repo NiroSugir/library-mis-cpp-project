@@ -10,7 +10,7 @@ private:
 
 public:
 	// todo: retrive the application name from a constant
-	IntroductionWindow() :wxFrame(
+	IntroductionWindow() : wxFrame(
 		// parent
 		nullptr,
 		// pid of the app
@@ -19,10 +19,9 @@ public:
 		"Placeholder Application Name",
 		// location of top corner
 		// todo: center on the screen
-		wxPoint(100, 50),
-		// size
-		wxSize(316, 578)
+		wxPoint(100, 50)
 	) {
+		this->SetSize(WIDTH, HEIGHT);
 	}
 };
 
