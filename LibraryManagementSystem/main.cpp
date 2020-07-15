@@ -1,6 +1,5 @@
 #include "wx/wx.h"
 #include "cApp.h"
 
-// The following funciton takes in a wxApp class to
-// launch the app.
+// Launcher for the application.
 wxIMPLEMENT_APP(cApp);
