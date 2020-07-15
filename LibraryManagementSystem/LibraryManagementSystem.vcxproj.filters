@@ -16,6 +16,9 @@
     <Filter Include="Header Files\windows">
       <UniqueIdentifier>{1138fde8-c278-42cb-abed-a8f96731e3e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\panels">
+      <UniqueIdentifier>{2d3d8707-f827-419d-88b2-e43752ff8fbf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -28,6 +31,9 @@
     </ClInclude>
     <ClInclude Include="IntroductionWindow.h">
       <Filter>Header Files\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="SignInPanel.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

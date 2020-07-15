@@ -24,6 +24,7 @@
   <ItemGroup>
     <ClInclude Include="cApp.h" />
     <ClInclude Include="IntroductionWindow.h" />
+    <ClInclude Include="SignInPanel.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
