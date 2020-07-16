@@ -14,7 +14,6 @@ private:
 	wxButton* btn_enter{ nullptr };
 	wxButton* btn_clear{ nullptr };
 
-
 public:
 	static const int WIDTH{ 316 };
 	static const int HEIGHT{ 578 };
@@ -51,9 +50,13 @@ public:
 		evt.Skip();
 	}
 
-	// todo: research pointer deletion for wx elements. check if the parent class truly handles it for us
 	~SignInPanel()
 	{
+		//unbind button click events
+		btn_enter->Unbind(wxEVT_COMMAND_BUTTON_CLICKED, &SignInPanel::onEnterClicked, this, wxID_ANY);
+		btn_clear->Unbind(wxEVT_COMMAND_BUTTON_CLICKED, &SignInPanel::onClearClicked, this, wxID_ANY);
+
+		// todo: research pointer deletion for wx elements. check if the parent class truly handles it for us
 		delete btn_enter;
 		btn_enter = nullptr;
 
