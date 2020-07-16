@@ -25,7 +25,7 @@ public:
 		"Placeholder Application Name",
 		// location of top corner
 		// todo: center on the screen
-		wxPoint{100, 50 }
+		wxPoint{ 100, 50 }
 	} {
 		this->switchToSignInPanel();
 	}

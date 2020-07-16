@@ -33,7 +33,7 @@
       <Filter>Header Files\windows</Filter>
     </ClInclude>
     <ClInclude Include="SignInPanel.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\panels</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
