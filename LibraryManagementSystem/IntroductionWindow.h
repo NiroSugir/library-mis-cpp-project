@@ -16,7 +16,7 @@ private:
 
 public:
 	// todo: retrive the application name from a constant
-	IntroductionWindow() : wxFrame(
+	IntroductionWindow() : wxFrame{
 		// parent
 		nullptr,
 		// pid of the app
@@ -26,7 +26,7 @@ public:
 		// location of top corner
 		// todo: center on the screen
 		wxPoint(100, 50)
-	) {
+	} {
 		this->switchToSignInPanel();
 	}
 
