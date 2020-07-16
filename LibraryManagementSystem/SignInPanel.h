@@ -45,6 +45,8 @@ public:
 		txt_username->SetValue("");
 		txt_password->SetValue("");
 
+		txt_username->SetFocus();
+
 		// do not propagate event
 		evt.Skip();
 	}
