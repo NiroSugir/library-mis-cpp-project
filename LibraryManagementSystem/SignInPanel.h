@@ -12,8 +12,6 @@ private:
 	wxButton* btn_enter{ nullptr };
 	wxButton* btn_clear{ nullptr };
 
-
-
 public:
 	static const int WIDTH{ 316 };
 	static const int HEIGHT{ 578 };

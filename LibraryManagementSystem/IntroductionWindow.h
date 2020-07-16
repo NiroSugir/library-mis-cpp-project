@@ -6,15 +6,11 @@
 class IntroductionWindow : public wxFrame
 {
 private:
-	const int WIDTH{ 316 };
-	const int HEIGHT{ 578 };
-
 	SignInPanel* sign_in_panel{ nullptr };
 
 	void switchToSignInPanel()
 	{
 		sign_in_panel = new SignInPanel(this);
-
 	}
 
 public:
@@ -30,7 +26,7 @@ public:
 		// todo: center on the screen
 		wxPoint(100, 50)
 	) {
-		this->SetSize(WIDTH, HEIGHT);
+		this->SetSize(SignInPanel::WIDTH, SignInPanel::HEIGHT);
 		this->switchToSignInPanel();
 	}
 
