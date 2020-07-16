@@ -30,6 +30,7 @@ public:
 		this->switchToSignInPanel();
 	}
 
+	// todo: research pointer deletion for wx elements. check if the parent class truly handles it for us
 	~IntroductionWindow()
 	{
 		if (sign_in_panel) {
@@ -38,4 +39,3 @@ public:
 		}
 	}
 };
-
