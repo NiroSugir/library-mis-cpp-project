@@ -10,7 +10,7 @@ private:
 
 	void switchToSignInPanel()
 	{
-		sign_in_panel = new SignInPanel(this);
+		sign_in_panel = new SignInPanel{ this };
 		this->SetSize(SignInPanel::WIDTH, SignInPanel::HEIGHT);
 	}
 
@@ -25,7 +25,7 @@ public:
 		"Placeholder Application Name",
 		// location of top corner
 		// todo: center on the screen
-		wxPoint(100, 50)
+		wxPoint{100, 50 }
 	} {
 		this->switchToSignInPanel();
 	}

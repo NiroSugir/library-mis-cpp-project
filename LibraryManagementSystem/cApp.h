@@ -11,7 +11,7 @@ private:
 public:
 	bool OnInit()
 	{
-		introduction_window = new IntroductionWindow();
+		introduction_window = new IntroductionWindow;
 		introduction_window->Show(true);
 
 		// bring the screen to the front 
