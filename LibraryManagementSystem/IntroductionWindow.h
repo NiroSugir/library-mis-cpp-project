@@ -11,6 +11,7 @@ private:
 	void switchToSignInPanel()
 	{
 		sign_in_panel = new SignInPanel(this);
+		this->SetSize(SignInPanel::WIDTH, SignInPanel::HEIGHT);
 	}
 
 public:
@@ -26,7 +27,6 @@ public:
 		// todo: center on the screen
 		wxPoint(100, 50)
 	) {
-		this->SetSize(SignInPanel::WIDTH, SignInPanel::HEIGHT);
 		this->switchToSignInPanel();
 	}
 
