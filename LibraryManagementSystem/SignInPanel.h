@@ -33,6 +33,7 @@ private:
 	wxFont title_font{ 17, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD };
 	wxFont message_font{ 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL };
 	wxFont textbox_font{ 11, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL };
+	wxFont join_button_font{ 14, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD };
 	wxFont copyright_font{ 8, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL };
 
 public:
@@ -54,6 +55,7 @@ public:
 		message->SetFont(message_font);
 		txt_username->SetFont(textbox_font);
 		txt_password->SetFont(textbox_font);
+		btn_join->SetFont(join_button_font);
 		copyright_message->SetFont(copyright_font);
 	}
 
