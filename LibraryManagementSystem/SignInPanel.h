@@ -21,16 +21,19 @@ private:
 	unique_ptr<wxStaticText> label_password{ new wxStaticText{this, wxID_ANY, "Password:", MOCKUP_POSITION(296, 296 - 18), wxSize{ 234, 15 } } };
 	unique_ptr<wxTextCtrl> txt_password{ new wxTextCtrl{this, wxID_ANY, "", MOCKUP_POSITION(296, 296), wxSize{ 248, 25 }, wxTE_CENTER | wxTE_PASSWORD} };
 
-	unique_ptr<wxButton> btn_enter{ new wxButton{this, wxID_ANY, "Enter", MOCKUP_POSITION(295, 352), wxSize{ 120, 32 } } };
+	unique_ptr<wxButton> btn_enter{ new wxButton{this, wxID_ANY, "Enter", MOCKUP_POSITION(296, 352), wxSize{ 120, 32 } } };
 	unique_ptr<wxButton> btn_clear{ new wxButton{this, wxID_ANY, "Clear", MOCKUP_POSITION(424, 352), wxSize{ 120, 32 } } };
 
 	unique_ptr<wxStaticText> join_message{ new wxStaticText{this, wxID_ANY, "Not a member yet? Start by registering. Don't worry, it's free.", MOCKUP_POSITION(296, 435), wxSize{ 248, 37 } } };
-	unique_ptr<wxButton> btn_join{ new wxButton{this, wxID_ANY, "Join", MOCKUP_POSITION(295, 491), wxSize{ 248, 104} } };
+	unique_ptr<wxButton> btn_join{ new wxButton{this, wxID_ANY, "Join", MOCKUP_POSITION(296, 491), wxSize{ 248, 104} } };
+
+	unique_ptr<wxStaticText> copyright_message{ new wxStaticText{this, wxID_ANY, "Copyright 2020 by Niroshan Sugirtharatnam.\nAll Rights Reserved.", MOCKUP_POSITION(296, 614), wxSize{ 249, 29 }, wxTE_CENTER } };
 
 	// todo: set correct fonts
 	wxFont title_font{ 17, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD };
 	wxFont message_font{ 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL };
 	wxFont textbox_font{ 11, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL };
+	wxFont copyright_font{ 8, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL };
 
 public:
 	static const int WIDTH{ 316 };
@@ -51,6 +54,7 @@ public:
 		message->SetFont(message_font);
 		txt_username->SetFont(textbox_font);
 		txt_password->SetFont(textbox_font);
+		copyright_message->SetFont(copyright_font);
 	}
 
 	void onEnterClicked(wxCommandEvent& evt)
