@@ -4,11 +4,10 @@
 
 ### Library Staff
 
-- [ ] As a Librarian, I can add a book to the system
-- [ ] As a Librarian, I can search for a book
 - [ ] As a Librarian, I can mark book as reserved or not reserved
+- [ ] ?? As a Librarian, I can manually add books to the system.
+- [ ] As a Librarian, I can approve books a supplier adds to the system that wasn't specifically requested, or
 - [ ] As a Librarian, I can modify a book's information
-- [ ] ?? As a Librarian, I can lend a book to list of users
 - [ ] As a Librarian, I can authorize a pending membership (eg: accept application)
 - [ ] As a Librarian, I can revoke membership from a member
 - [ ] As a Librarian, I can set a book's condition as damaged which can optionally add a fine to a member
