@@ -2,6 +2,7 @@
 
 #include <memory>
 #include "wx/wx.h"
+#include "wx/statline.h"
 
 // use macro to calculate the position from the mockup
 #define MOCKUP_POSITION(_x, _y)(wxPoint{_x - 260, _y - (96 + 30)})
@@ -28,6 +29,8 @@ private:
 	unique_ptr<wxButton> btn_join{ new wxButton{this, wxID_ANY, "Join", MOCKUP_POSITION(296, 491), wxSize{ 248, 104} } };
 
 	unique_ptr<wxStaticText> copyright_message{ new wxStaticText{this, wxID_ANY, "Copyright 2020 by Niroshan Sugirtharatnam.\nAll Rights Reserved.", MOCKUP_POSITION(296, 614), wxSize{ 249, 29 }, wxTE_CENTER } };
+
+	unique_ptr<wxStaticLine> seperator{ new wxStaticLine{this, wxID_ANY, MOCKUP_POSITION(319, 417), wxSize{198, 1}, wxLI_HORIZONTAL} };
 
 	// todo: set correct fonts
 	wxFont title_font{ 17, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD };
@@ -57,6 +60,8 @@ public:
 		txt_password->SetFont(textbox_font);
 		btn_join->SetFont(join_button_font);
 		copyright_message->SetFont(copyright_font);
+
+		
 	}
 
 	void onEnterClicked(wxCommandEvent& evt)
