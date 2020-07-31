@@ -13,16 +13,19 @@ class SignInPanel : public wxPanel
 private:
 	// screen elements
 	unique_ptr<wxStaticText> title{ new wxStaticText{this, wxID_ANY, "Sign In",  MOCKUP_POSITION(296, 150) , wxSize{ 84, 36 } } };
-	unique_ptr<wxStaticText> message{ new wxStaticText{this, wxID_ANY, "Welcome back to [library_name]!", MOCKUP_POSITION( 296, 193), wxSize{ 234, 22 } } };
+	unique_ptr<wxStaticText> message{ new wxStaticText{this, wxID_ANY, "Welcome back to [library_name]!", MOCKUP_POSITION(296, 188), wxSize{ 234, 22 } } };
 
-	unique_ptr<wxStaticText> label_username{ new wxStaticText{this, wxID_ANY, "Username:", MOCKUP_POSITION( 296, 240 - 18), wxSize{ 234, 15 } } };
+	unique_ptr<wxStaticText> label_username{ new wxStaticText{this, wxID_ANY, "Username:", MOCKUP_POSITION(296, 240 - 18), wxSize{ 234, 15 } } };
 	unique_ptr<wxTextCtrl> txt_username{ new wxTextCtrl{this, wxID_ANY, "", MOCKUP_POSITION(296, 240), wxSize{ 248, 25 }, wxTE_CENTER } };
 
 	unique_ptr<wxStaticText> label_password{ new wxStaticText{this, wxID_ANY, "Password:", MOCKUP_POSITION(296, 296 - 18), wxSize{ 234, 15 } } };
-	unique_ptr<wxTextCtrl> txt_password{ new wxTextCtrl{this, wxID_ANY, "", MOCKUP_POSITION( 296, 296), wxSize{ 248, 25 }, wxTE_CENTER | wxTE_PASSWORD} };
+	unique_ptr<wxTextCtrl> txt_password{ new wxTextCtrl{this, wxID_ANY, "", MOCKUP_POSITION(296, 296), wxSize{ 248, 25 }, wxTE_CENTER | wxTE_PASSWORD} };
 
-	unique_ptr<wxButton> btn_enter{ new wxButton{this, wxID_ANY, "Enter", MOCKUP_POSITION( 295, 352), wxSize{ 120, 32 } } };
-	unique_ptr<wxButton> btn_clear{ new wxButton{this, wxID_ANY, "Clear", MOCKUP_POSITION( 424, 352), wxSize{ 120, 32 } } };
+	unique_ptr<wxButton> btn_enter{ new wxButton{this, wxID_ANY, "Enter", MOCKUP_POSITION(295, 352), wxSize{ 120, 32 } } };
+	unique_ptr<wxButton> btn_clear{ new wxButton{this, wxID_ANY, "Clear", MOCKUP_POSITION(424, 352), wxSize{ 120, 32 } } };
+
+	unique_ptr<wxStaticText> join_message{ new wxStaticText{this, wxID_ANY, "Not a member yet? Start by registering. Don't worry, it's free.", MOCKUP_POSITION(296, 435), wxSize{ 248, 37 } } };
+	unique_ptr<wxButton> btn_join{ new wxButton{this, wxID_ANY, "Join", MOCKUP_POSITION(295, 491), wxSize{ 248, 104} } };
 
 	// todo: set correct fonts
 	wxFont title_font{ 17, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD };
