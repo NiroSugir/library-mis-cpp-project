@@ -1,10 +1,11 @@
 #include "JoinPanel.h"
 
-JoinPanel::JoinPanel(wxWindow* _parent) :wxPanel{ _parent, wxID_ANY, wxPoint{ 0, 0 }, wxSize{ WIDTH, HEIGHT } }
+JoinPanel::JoinPanel(wxWindow* _parent, IntroductionWindow* _i) : intro{ _i }, wxPanel{ _parent, wxID_ANY, wxPoint{ 0, 0 }, wxSize{ WIDTH, HEIGHT } }
 {
 	// bind button click events
 	btn_join->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &JoinPanel::onEnterClicked, this, wxID_ANY);
 	btn_clear->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &JoinPanel::onClearClicked, this, wxID_ANY);
+	btn_back->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &JoinPanel::onBackClicked, this, wxID_ANY);
 
 	txt_first_name->SetHint("First Name");
 	txt_last_name->SetHint("Last Name");
@@ -42,6 +43,11 @@ void JoinPanel::onClearClicked(wxCommandEvent& evt)
 
 	// do not propagate event
 	evt.Skip();
+}
+
+void JoinPanel::onBackClicked(wxCommandEvent& evt)
+{
+	intro->switchToSignInPanel();
 }
 
 JoinPanel::~JoinPanel()

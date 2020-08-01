@@ -21,12 +21,22 @@ void IntroductionWindow::switchToSignInPanel()
 {
 	sign_in_panel = new SignInPanel{ this, this };
 	this->SetSize(SignInPanel::WIDTH, SignInPanel::HEIGHT);
+
+	if (join_panel) {
+		delete join_panel;
+		join_panel = nullptr;
+	}
 }
 
 void IntroductionWindow::switchToJoinPanel()
 {
-	join_panel = new JoinPanel{ this };
+	join_panel = new JoinPanel{ this, this };
 	this->SetSize(JoinPanel::WIDTH, JoinPanel::HEIGHT);
+
+	if (sign_in_panel) {
+		delete sign_in_panel;
+		sign_in_panel = nullptr;
+	}
 }
 
 // todo: research pointer deletion for wx elements. check if the parent class truly handles it for us

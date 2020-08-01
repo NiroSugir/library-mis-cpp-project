@@ -3,6 +3,7 @@
 #include <memory>
 #include "wx/wx.h"
 #include "wx/statline.h"
+#include "IntroductionWindow.h"
 
 // use macro to calculate the position from the mockup
 #define MOCKUP_POSITION_JOIN(_x, _y)(wxPoint{_x - 260, _y - (799 + 30)})
@@ -10,6 +11,8 @@
 class JoinPanel : public wxPanel
 {
 private:
+	IntroductionWindow* intro{ nullptr };
+
 	// screen elements
 	wxStaticText* title{ new wxStaticText{this, wxID_ANY, "Join",  MOCKUP_POSITION_JOIN(296, 853) , wxSize{ 84, 36 } } };
 
@@ -50,11 +53,13 @@ public:
 	static const int WIDTH{ 316 };
 	static const int HEIGHT{ 578 };
 
-	JoinPanel(wxWindow* _parent);
+	JoinPanel(wxWindow* _parent, IntroductionWindow* _i);
 
 	void onEnterClicked(wxCommandEvent& evt);
 
 	void onClearClicked(wxCommandEvent& evt);
+
+	void onBackClicked(wxCommandEvent& evt);
 
 	~JoinPanel();
 };
