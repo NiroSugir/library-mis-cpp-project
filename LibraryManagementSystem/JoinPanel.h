@@ -8,38 +8,38 @@
 // use macro to calculate the position from the mockup
 #define MOCKUP_POSITION_JOIN(_x, _y)(wxPoint{_x - 260, _y - (799 + 30)})
 
-class JoinPanel : public wxPanel
+class JoinPanel : public GuestPanelBase
 {
 private:
 	IntroductionWindow* intro{ nullptr };
 
 	// screen elements
-	wxStaticText* title{ new wxStaticText{this, wxID_ANY, "Join",  MOCKUP_POSITION_JOIN(296, 853) , wxSize{ 84, 36 } } };
+	wxStaticText* title{ nullptr };
 
-	wxStaticText* label_first_name{ new wxStaticText{this, wxID_ANY, "First Name:", MOCKUP_POSITION_JOIN(296, 913 - 18), wxSize{ 120, 15 } } };
-	wxTextCtrl* txt_first_name{ new wxTextCtrl{this, wxID_ANY, "", MOCKUP_POSITION_JOIN(296, 913), wxSize{ 120, 25 }, wxTE_CENTER } };
+	wxStaticText* label_first_name{ nullptr };
+	wxTextCtrl* txt_first_name{ nullptr };
 
-	wxStaticText* label_last_name{ new wxStaticText{this, wxID_ANY, "Last Name:", MOCKUP_POSITION_JOIN(423, 913 - 18), wxSize{ 120, 15 } } };
-	wxTextCtrl* txt_last_name{ new wxTextCtrl{this, wxID_ANY, "", MOCKUP_POSITION_JOIN(423, 913), wxSize{ 120, 25 }, wxTE_CENTER } };
+	wxStaticText* label_last_name{ nullptr };
+	wxTextCtrl* txt_last_name{ nullptr };
 
-	wxStaticText* label_username{ new wxStaticText{this, wxID_ANY, "Username:", MOCKUP_POSITION_JOIN(296, 969 - 18), wxSize{ 234, 15 } } };
-	wxTextCtrl* txt_username{ new wxTextCtrl{this, wxID_ANY, "", MOCKUP_POSITION_JOIN(296, 969), wxSize{ 248, 25 }, wxTE_CENTER } };
+	wxStaticText* label_username{ nullptr };
+	wxTextCtrl* txt_username{ nullptr };
 
-	wxStaticText* label_password{ new wxStaticText{this, wxID_ANY, "Password:", MOCKUP_POSITION_JOIN(296, 1025 - 18), wxSize{ 234, 15 } } };
-	wxTextCtrl* txt_password{ new wxTextCtrl{this, wxID_ANY, "", MOCKUP_POSITION_JOIN(296, 1025), wxSize{ 248, 25 }, wxTE_CENTER | wxTE_PASSWORD} };
+	wxStaticText* label_password{ nullptr };
+	wxTextCtrl* txt_password{ nullptr };
 
-	wxStaticText* label_password_verify{ new wxStaticText{this, wxID_ANY, "Verify Password:", MOCKUP_POSITION_JOIN(296, 1081 - 18), wxSize{ 234, 15 } } };
-	wxTextCtrl* txt_password_verify{ new wxTextCtrl{this, wxID_ANY, "", MOCKUP_POSITION_JOIN(296, 1081), wxSize{ 248, 25 }, wxTE_CENTER | wxTE_PASSWORD} };
+	wxStaticText* label_password_verify{ nullptr };
+	wxTextCtrl* txt_password_verify{ nullptr };
 
-	wxButton* btn_join{ new wxButton{this, wxID_ANY, "Join", MOCKUP_POSITION_JOIN(296, 1137), wxSize{ 120, 32 } } };
-	wxButton* btn_clear{ new wxButton{this, wxID_ANY, "Clear", MOCKUP_POSITION_JOIN(424, 1137), wxSize{ 120, 32 } } };
+	wxButton* btn_join{ nullptr };
+	wxButton* btn_clear{ nullptr };
 
-	wxStaticLine* seperator{ new wxStaticLine{this, wxID_ANY, MOCKUP_POSITION_JOIN(319, 1193), wxSize{198, 1}, wxLI_HORIZONTAL} };
+	wxStaticLine* seperator{ nullptr };
 
-	wxStaticText* signin_message{ new wxStaticText{this, wxID_ANY, "Already a member? Go back to sign in.", MOCKUP_POSITION_JOIN(296, 1218), wxSize{ 248, 23 } } };
-	wxButton* btn_back{ new wxButton{this, wxID_ANY, "Back to Sign In", MOCKUP_POSITION_JOIN(296, 1246), wxSize{ 248, 47} } };
+	wxStaticText* signin_message{ nullptr };
+	wxButton* btn_back{ nullptr };
 
-	wxStaticText* copyright_message{ new wxStaticText{this, wxID_ANY, "Copyright 2020 by Niroshan Sugirtharatnam.\nAll Rights Reserved.", MOCKUP_POSITION_JOIN(296, 1317), wxSize{ 249, 29 }, wxTE_CENTER } };
+	wxStaticText* copyright_message{ nullptr };
 
 
 	// todo: set correct fonts
@@ -54,6 +54,8 @@ public:
 	static const int HEIGHT{ 578 };
 
 	JoinPanel(wxWindow* _parent, IntroductionWindow* _i);
+
+	void populatePanel();
 
 	void onEnterClicked(wxCommandEvent& evt);
 

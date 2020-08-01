@@ -1,14 +1,15 @@
 #pragma once
 
 #include "wx/wx.h"
+#include "GuestPanelBase.h";
 //#include "SignInPanel.h"
 //#include "JoinPanel.h"
 
 class IntroductionWindow : public wxFrame
 {
 private:
-	wxPanel* sign_in_panel{ nullptr };
-	wxPanel* join_panel{ nullptr };
+	GuestPanelBase* sign_in_panel{ nullptr };
+	GuestPanelBase* join_panel{ nullptr };
 
 public:
 	// todo: retrive the application name from a constant

@@ -47,5 +47,8 @@
     <ClInclude Include="JoinPanel.h">
       <Filter>Header Files\panels</Filter>
     </ClInclude>
+    <ClInclude Include="GuestPanelBase.h">
+      <Filter>Header Files\panels</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

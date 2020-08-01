@@ -19,24 +19,29 @@ IntroductionWindow::IntroductionWindow() : wxFrame{
 
 void IntroductionWindow::switchToSignInPanel()
 {
-	sign_in_panel = new SignInPanel{ this, this };
-	this->SetSize(SignInPanel::WIDTH, SignInPanel::HEIGHT);
-
 	if (join_panel) {
-		delete join_panel;
-		join_panel = nullptr;
+		join_panel->Hide();
 	}
+
+	sign_in_panel = new SignInPanel{ this, this };
+	sign_in_panel->Hide();
+	sign_in_panel->populatePanel();
+	this->SetSize(SignInPanel::WIDTH, SignInPanel::HEIGHT);
+	sign_in_panel->ShowWithEffect(wxSHOW_EFFECT_ROLL_TO_RIGHT, 70);
+
 }
 
 void IntroductionWindow::switchToJoinPanel()
 {
-	join_panel = new JoinPanel{ this, this };
-	this->SetSize(JoinPanel::WIDTH, JoinPanel::HEIGHT);
-
 	if (sign_in_panel) {
-		delete sign_in_panel;
-		sign_in_panel = nullptr;
+		sign_in_panel->Hide();
 	}
+
+	join_panel = new JoinPanel{ this, this };
+	join_panel->Hide();
+	join_panel->populatePanel();
+	this->SetSize(JoinPanel::WIDTH, JoinPanel::HEIGHT);
+	join_panel->ShowWithEffect(wxSHOW_EFFECT_ROLL_TO_LEFT, 70);
 }
 
 // todo: research pointer deletion for wx elements. check if the parent class truly handles it for us

@@ -26,6 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cApp.h" />
+    <ClInclude Include="GuestPanelBase.h" />
     <ClInclude Include="IntroductionWindow.h" />
     <ClInclude Include="JoinPanel.h" />
     <ClInclude Include="SignInPanel.h" />
