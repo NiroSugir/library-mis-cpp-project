@@ -27,7 +27,7 @@ void IntroductionWindow::switchToSignInPanel()
 	sign_in_panel->Hide();
 	sign_in_panel->populatePanel();
 	this->SetSize(SignInPanel::WIDTH, SignInPanel::HEIGHT);
-	sign_in_panel->ShowWithEffect(wxSHOW_EFFECT_ROLL_TO_RIGHT, TRANSITION_TIME);
+	sign_in_panel->Show();
 }
 
 void IntroductionWindow::switchToJoinPanel()
@@ -40,7 +40,7 @@ void IntroductionWindow::switchToJoinPanel()
 	join_panel->Hide();
 	join_panel->populatePanel();
 	this->SetSize(JoinPanel::WIDTH, JoinPanel::HEIGHT);
-	join_panel->ShowWithEffect(wxSHOW_EFFECT_ROLL_TO_LEFT, TRANSITION_TIME);
+	join_panel->Show();
 }
 
 // todo: research pointer deletion for wx elements. check if the parent class truly handles it for us
