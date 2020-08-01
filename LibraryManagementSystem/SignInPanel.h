@@ -25,12 +25,13 @@ private:
 	unique_ptr<wxButton> btn_enter{ new wxButton{this, wxID_ANY, "Enter", MOCKUP_POSITION(296, 352), wxSize{ 120, 32 } } };
 	unique_ptr<wxButton> btn_clear{ new wxButton{this, wxID_ANY, "Clear", MOCKUP_POSITION(424, 352), wxSize{ 120, 32 } } };
 
+	unique_ptr<wxStaticLine> seperator{ new wxStaticLine{this, wxID_ANY, MOCKUP_POSITION(319, 417), wxSize{198, 1}, wxLI_HORIZONTAL} };
+
 	unique_ptr<wxStaticText> join_message{ new wxStaticText{this, wxID_ANY, "Not a member yet? Start by registering. Don't worry, it's free.", MOCKUP_POSITION(296, 435), wxSize{ 248, 37 } } };
 	unique_ptr<wxButton> btn_join{ new wxButton{this, wxID_ANY, "Join", MOCKUP_POSITION(296, 491), wxSize{ 248, 104} } };
 
 	unique_ptr<wxStaticText> copyright_message{ new wxStaticText{this, wxID_ANY, "Copyright 2020 by Niroshan Sugirtharatnam.\nAll Rights Reserved.", MOCKUP_POSITION(296, 614), wxSize{ 249, 29 }, wxTE_CENTER } };
 
-	unique_ptr<wxStaticLine> seperator{ new wxStaticLine{this, wxID_ANY, MOCKUP_POSITION(319, 417), wxSize{198, 1}, wxLI_HORIZONTAL} };
 
 	// todo: set correct fonts
 	wxFont title_font{ 17, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD };
@@ -60,8 +61,6 @@ public:
 		txt_password->SetFont(textbox_font);
 		btn_join->SetFont(join_button_font);
 		copyright_message->SetFont(copyright_font);
-
-		
 	}
 
 	void onEnterClicked(wxCommandEvent& evt)
