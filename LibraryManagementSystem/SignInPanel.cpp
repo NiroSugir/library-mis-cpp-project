@@ -1,10 +1,5 @@
 #include "SignInPanel.h"
 
-SignInPanel::SignInPanel(wxWindow* _parent, IntroductionWindow* _i) : intro{ _i }, GuestPanelBase{ _parent, WIDTH, HEIGHT }
-{
-
-}
-
 void SignInPanel::populatePanel()
 {
 	title = new wxStaticText{ this, wxID_ANY, "Sign In",  MOCKUP_POSITION_SIGN_IN(296, 150) , wxSize{ 84, 36 } };
@@ -74,5 +69,4 @@ SignInPanel::~SignInPanel()
 	btn_enter->Unbind(wxEVT_COMMAND_BUTTON_CLICKED, &SignInPanel::onEnterClicked, this, wxID_ANY);
 	btn_clear->Unbind(wxEVT_COMMAND_BUTTON_CLICKED, &SignInPanel::onClearClicked, this, wxID_ANY);
 	btn_join->Unbind(wxEVT_COMMAND_BUTTON_CLICKED, &SignInPanel::onClearClicked, this, wxID_ANY);
-
 }

@@ -1,6 +1,5 @@
 #pragma once
 
-#include <memory>
 #include "wx/wx.h"
 #include "wx/statline.h"
 #include "IntroductionWindow.h"
@@ -33,7 +32,6 @@ private:
 
 	wxStaticText* copyright_message{ nullptr };
 
-
 	// todo: set correct fonts
 	wxFont title_font{ 17, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD };
 	wxFont message_font{ 12, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL };
@@ -45,7 +43,7 @@ public:
 	static const int WIDTH{ 316 };
 	static const int HEIGHT{ 578 };
 
-	SignInPanel(wxWindow* _parent, IntroductionWindow* _i);
+	SignInPanel(wxWindow* _parent, IntroductionWindow* _i) : intro{ _i }, GuestPanelBase{ _parent, WIDTH, HEIGHT } {};
 
 	void populatePanel();
 

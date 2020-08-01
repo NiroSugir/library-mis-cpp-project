@@ -1,6 +1,5 @@
 #pragma once
 
-#include <memory>
 #include "wx/wx.h"
 #include "wx/statline.h"
 #include "IntroductionWindow.h"
@@ -53,7 +52,7 @@ public:
 	static const int WIDTH{ 316 };
 	static const int HEIGHT{ 578 };
 
-	JoinPanel(wxWindow* _parent, IntroductionWindow* _i);
+	JoinPanel(wxWindow* _parent, IntroductionWindow* _i) : intro{ _i }, GuestPanelBase{ _parent, WIDTH, HEIGHT } {}
 
 	void populatePanel();
 

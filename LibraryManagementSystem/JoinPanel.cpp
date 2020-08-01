@@ -1,10 +1,5 @@
 #include "JoinPanel.h"
 
-JoinPanel::JoinPanel(wxWindow* _parent, IntroductionWindow* _i) : intro{ _i }, GuestPanelBase{ _parent, WIDTH, HEIGHT }
-{
-
-}
-
 void JoinPanel::populatePanel()
 {
 	title = new wxStaticText{ this, wxID_ANY, "Join",  MOCKUP_POSITION_JOIN(296, 853) , wxSize{ 84, 36 } };
@@ -45,7 +40,7 @@ void JoinPanel::populatePanel()
 	txt_password->SetHint("Password");
 	txt_password_verify->SetHint("Verify Password");
 
-	txt_username->SetFocus();
+	txt_first_name->SetFocus();
 
 	title->SetFont(title_font);
 	txt_first_name->SetFont(textbox_font);
