@@ -24,6 +24,15 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="IntroductionWindow.cpp">
+      <Filter>Header Files\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="SignInPanel.cpp">
+      <Filter>Header Files\panels</Filter>
+    </ClCompile>
+    <ClCompile Include="JoinPanel.cpp">
+      <Filter>Header Files\panels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cApp.h">

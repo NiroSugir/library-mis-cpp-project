@@ -3,34 +3,35 @@
 #include <memory>
 #include "wx/wx.h"
 #include "wx/statline.h"
+#include "IntroductionWindow.h"
 
 // use macro to calculate the position from the mockup
-#define MOCKUP_POSITION(_x, _y)(wxPoint{_x - 260, _y - (96 + 30)})
-
-using std::unique_ptr;
+#define MOCKUP_POSITION_SIGN_IN(_x, _y)(wxPoint{_x - 260, _y - (96 + 30)})
 
 class SignInPanel : public wxPanel
 {
 private:
+	IntroductionWindow* intro{ nullptr };
+
 	// screen elements
-	unique_ptr<wxStaticText> title{ new wxStaticText{this, wxID_ANY, "Sign In",  MOCKUP_POSITION(296, 150) , wxSize{ 84, 36 } } };
-	unique_ptr<wxStaticText> message{ new wxStaticText{this, wxID_ANY, "Welcome back to [library_name]!", MOCKUP_POSITION(296, 188), wxSize{ 234, 22 } } };
+	wxStaticText* title{ new wxStaticText{this, wxID_ANY, "Sign In",  MOCKUP_POSITION_SIGN_IN(296, 150) , wxSize{ 84, 36 } } };
+	wxStaticText* message{ new wxStaticText{this, wxID_ANY, "Welcome back to [library_name]!", MOCKUP_POSITION_SIGN_IN(296, 188), wxSize{ 234, 22 } } };
 
-	unique_ptr<wxStaticText> label_username{ new wxStaticText{this, wxID_ANY, "Username:", MOCKUP_POSITION(296, 240 - 18), wxSize{ 234, 15 } } };
-	unique_ptr<wxTextCtrl> txt_username{ new wxTextCtrl{this, wxID_ANY, "", MOCKUP_POSITION(296, 240), wxSize{ 248, 25 }, wxTE_CENTER } };
+	wxStaticText* label_username{ new wxStaticText{this, wxID_ANY, "Username:", MOCKUP_POSITION_SIGN_IN(296, 240 - 18), wxSize{ 234, 15 } } };
+	wxTextCtrl* txt_username{ new wxTextCtrl{this, wxID_ANY, "", MOCKUP_POSITION_SIGN_IN(296, 240), wxSize{ 248, 25 }, wxTE_CENTER } };
 
-	unique_ptr<wxStaticText> label_password{ new wxStaticText{this, wxID_ANY, "Password:", MOCKUP_POSITION(296, 296 - 18), wxSize{ 234, 15 } } };
-	unique_ptr<wxTextCtrl> txt_password{ new wxTextCtrl{this, wxID_ANY, "", MOCKUP_POSITION(296, 296), wxSize{ 248, 25 }, wxTE_CENTER | wxTE_PASSWORD} };
+	wxStaticText* label_password{ new wxStaticText{this, wxID_ANY, "Password:", MOCKUP_POSITION_SIGN_IN(296, 296 - 18), wxSize{ 234, 15 } } };
+	wxTextCtrl* txt_password{ new wxTextCtrl{this, wxID_ANY, "", MOCKUP_POSITION_SIGN_IN(296, 296), wxSize{ 248, 25 }, wxTE_CENTER | wxTE_PASSWORD} };
 
-	unique_ptr<wxButton> btn_enter{ new wxButton{this, wxID_ANY, "Enter", MOCKUP_POSITION(296, 352), wxSize{ 120, 32 } } };
-	unique_ptr<wxButton> btn_clear{ new wxButton{this, wxID_ANY, "Clear", MOCKUP_POSITION(424, 352), wxSize{ 120, 32 } } };
+	wxButton* btn_enter{ new wxButton{this, wxID_ANY, "Enter", MOCKUP_POSITION_SIGN_IN(296, 352), wxSize{ 120, 32 } } };
+	wxButton* btn_clear{ new wxButton{this, wxID_ANY, "Clear", MOCKUP_POSITION_SIGN_IN(424, 352), wxSize{ 120, 32 } } };
 
-	unique_ptr<wxStaticLine> seperator{ new wxStaticLine{this, wxID_ANY, MOCKUP_POSITION(319, 417), wxSize{198, 1}, wxLI_HORIZONTAL} };
+	wxStaticLine* seperator{ new wxStaticLine{this, wxID_ANY, MOCKUP_POSITION_SIGN_IN(319, 417), wxSize{198, 1}, wxLI_HORIZONTAL} };
 
-	unique_ptr<wxStaticText> join_message{ new wxStaticText{this, wxID_ANY, "Not a member yet? Start by registering. Don't worry, it's free.", MOCKUP_POSITION(296, 435), wxSize{ 248, 37 } } };
-	unique_ptr<wxButton> btn_join{ new wxButton{this, wxID_ANY, "Join", MOCKUP_POSITION(296, 491), wxSize{ 248, 104} } };
+	wxStaticText* join_message{ new wxStaticText{this, wxID_ANY, "Not a member yet? Start by registering. Don't worry, it's free.", MOCKUP_POSITION_SIGN_IN(296, 435), wxSize{ 248, 37 } } };
+	wxButton* btn_join{ new wxButton{this, wxID_ANY, "Join", MOCKUP_POSITION_SIGN_IN(296, 491), wxSize{ 248, 104} } };
 
-	unique_ptr<wxStaticText> copyright_message{ new wxStaticText{this, wxID_ANY, "Copyright 2020 by Niroshan Sugirtharatnam.\nAll Rights Reserved.", MOCKUP_POSITION(296, 614), wxSize{ 249, 29 }, wxTE_CENTER } };
+	wxStaticText* copyright_message{ new wxStaticText{this, wxID_ANY, "Copyright 2020 by Niroshan Sugirtharatnam.\nAll Rights Reserved.", MOCKUP_POSITION_SIGN_IN(296, 614), wxSize{ 249, 29 }, wxTE_CENTER } };
 
 
 	// todo: set correct fonts
@@ -44,46 +45,13 @@ public:
 	static const int WIDTH{ 316 };
 	static const int HEIGHT{ 578 };
 
-	SignInPanel(wxWindow* _parent) :wxPanel{ _parent, wxID_ANY, wxPoint{ 0, 0 }, wxSize{ WIDTH, HEIGHT } }
-	{
-		// bind button click events
-		btn_enter->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &SignInPanel::onEnterClicked, this, wxID_ANY);
-		btn_clear->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &SignInPanel::onClearClicked, this, wxID_ANY);
+	SignInPanel(wxWindow* _parent, IntroductionWindow* _i);
 
-		txt_username->SetHint("Username");
-		txt_password->SetHint("Password");
+	void onEnterClicked(wxCommandEvent& evt);
 
-		txt_username->SetFocus();
+	void onClearClicked(wxCommandEvent& evt);
 
-		title->SetFont(title_font);
-		message->SetFont(message_font);
-		txt_username->SetFont(textbox_font);
-		txt_password->SetFont(textbox_font);
-		btn_join->SetFont(join_button_font);
-		copyright_message->SetFont(copyright_font);
-	}
+	void onJoinClicked(wxCommandEvent& evt);
 
-	void onEnterClicked(wxCommandEvent& evt)
-	{
-		// do not propagate event
-		evt.Skip();
-	}
-
-	void onClearClicked(wxCommandEvent& evt)
-	{
-		txt_username->SetValue("");
-		txt_password->SetValue("");
-
-		txt_username->SetFocus();
-
-		// do not propagate event
-		evt.Skip();
-	}
-
-	~SignInPanel()
-	{
-		//unbind button click events
-		btn_enter->Unbind(wxEVT_COMMAND_BUTTON_CLICKED, &SignInPanel::onEnterClicked, this, wxID_ANY);
-		btn_clear->Unbind(wxEVT_COMMAND_BUTTON_CLICKED, &SignInPanel::onClearClicked, this, wxID_ANY);
-	}
+	~SignInPanel();
 };
