@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="constants.h" />
     <ClCompile Include="IntroductionWindow.cpp" />
     <ClCompile Include="JoinPanel.cpp" />
     <ClCompile Include="main.cpp" />

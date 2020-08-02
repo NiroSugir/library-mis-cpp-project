@@ -33,6 +33,9 @@
     <ClCompile Include="JoinPanel.cpp">
       <Filter>Header Files\panels</Filter>
     </ClCompile>
+    <ClCompile Include="constants.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cApp.h">

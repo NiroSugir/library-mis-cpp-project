@@ -1,6 +1,7 @@
 #include "IntroductionWindow.h"
 #include "SignInPanel.h"
 #include "JoinPanel.h"
+#include "constants.h"
 
 // todo: retrive the application name from a constant
 IntroductionWindow::IntroductionWindow() : wxFrame{
@@ -9,7 +10,7 @@ IntroductionWindow::IntroductionWindow() : wxFrame{
 	// pid of the app
 	wxID_ANY,
 	// title
-	"Placeholder Application Name",
+	APP_NAME + ": Guest View",
 	// location of top corner
 	// todo: center on the screen
 	wxPoint{ 100, 50 }

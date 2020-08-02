@@ -1,9 +1,10 @@
 #include "SignInPanel.h"
+#include "constants.h"
 
 void SignInPanel::populatePanel()
 {
 	title = new wxStaticText{ this, wxID_ANY, "Sign In",  MOCKUP_POSITION_SIGN_IN(296, 150) , wxSize{ 84, 36 } };
-	message = new wxStaticText{ this, wxID_ANY, "Welcome back to [library_name]!", MOCKUP_POSITION_SIGN_IN(296, 188), wxSize{ 234, 22 } };
+	message = new wxStaticText{ this, wxID_ANY, "Welcome back to " + APP_NAME + "!", MOCKUP_POSITION_SIGN_IN(296, 188), wxSize{ 234, 22 } };
 
 	label_username = new wxStaticText{ this, wxID_ANY, "Username:", MOCKUP_POSITION_SIGN_IN(296, 240 - 18), wxSize{ 234, 15 } };
 	txt_username = new wxTextCtrl{ this, wxID_ANY, "", MOCKUP_POSITION_SIGN_IN(296, 240), wxSize{ 248, 25 }, wxTE_CENTER };
