@@ -20,6 +20,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="constants.h" />
+    <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="JoinRouteController.cpp" />
+    <ClCompile Include="JoinRouteModel.cpp" />
+    <ClCompile Include="JoinRouteView.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="View.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="JoinPanel.cpp" />
     <ClCompile Include="main.cpp" />
@@ -28,7 +34,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cApp.h" />
+    <ClInclude Include="Controller.h" />
     <ClInclude Include="GuestPanelBase.h" />
+    <ClInclude Include="JoinRouteController.h" />
+    <ClInclude Include="JoinRouteModel.h" />
+    <ClInclude Include="JoinRouteView.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="View.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="JoinPanel.h" />
     <ClInclude Include="Router.h" />

@@ -16,6 +16,27 @@
     <Filter Include="Header Files\panels">
       <UniqueIdentifier>{2d3d8707-f827-419d-88b2-e43752ff8fbf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\guest-routes">
+      <UniqueIdentifier>{121b18a4-7c17-4364-8678-f8757583e705}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\guest-routes\login-route">
+      <UniqueIdentifier>{8683185b-ec94-493f-9f3b-9b0014350fdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\guest-routes\join-route">
+      <UniqueIdentifier>{adb0d8ec-efe1-466b-908f-4452f5b4e72c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\staff-routes">
+      <UniqueIdentifier>{446a61c5-3c90-4f34-9cf0-b23adbe8a1cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\member-routes">
+      <UniqueIdentifier>{aece00cc-a17d-424a-98c0-8dbcc88749b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\supplier-routes">
+      <UniqueIdentifier>{a5e8e751-e975-44df-a442-bcda60640fd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\__mvc">
+      <UniqueIdentifier>{9ca52d66-d329-4718-ad35-520e30172ec6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -34,6 +55,24 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="JoinPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="View.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JoinRouteView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JoinRouteController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JoinRouteModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -55,6 +94,24 @@
     </ClInclude>
     <ClInclude Include="Window.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Header Files\__mvc</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>Header Files\__mvc</Filter>
+    </ClInclude>
+    <ClInclude Include="View.h">
+      <Filter>Header Files\__mvc</Filter>
+    </ClInclude>
+    <ClInclude Include="JoinRouteController.h">
+      <Filter>Header Files\guest-routes\join-route</Filter>
+    </ClInclude>
+    <ClInclude Include="JoinRouteView.h">
+      <Filter>Header Files\guest-routes\join-route</Filter>
+    </ClInclude>
+    <ClInclude Include="JoinRouteModel.h">
+      <Filter>Header Files\guest-routes\join-route</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

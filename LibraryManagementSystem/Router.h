@@ -1,11 +1,14 @@
 #pragma once
 
 #include "Window.h"
+#include "JoinRouteController.h"
 
 class Router
 {
 protected:
 	static Router* instance;
+
+	Controller* currentRouteController{ nullptr };
 
 	// this is the window object on which all views will be rendered on. pass a pointer to this
 	// object to the controllers that are responsible for handling the views for their respective routes
@@ -22,4 +25,6 @@ public:
 	void operator=(const Router&) = delete;
 
 	static Router* getInstance();
+
+	void switchToJoinRoute();
 };

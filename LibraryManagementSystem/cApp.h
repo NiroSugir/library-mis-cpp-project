@@ -12,13 +12,8 @@ private:
 public:
 	bool OnInit()
 	{
-		/*	introduction_window = new IntroductionWindow;
-			introduction_window->Show(true);*/
-
-			// bring the screen to the front 
-			//introduction_window->Raise();		//introduction_window->Raise();
-
 		Router* r = Router::getInstance();
+		r->switchToJoinRoute();
 
 		return true;
 	}
@@ -34,6 +29,4 @@ public:
 
 	//	return 0;
 	//}
-
 };
-
