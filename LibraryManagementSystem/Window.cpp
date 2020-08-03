@@ -1,10 +1,10 @@
-#include "IntroductionWindow.h"
+#include "Window.h"
 #include "SignInPanel.h"
 #include "JoinPanel.h"
 #include "constants.h"
 
 // todo: retrive the application name from a constant
-IntroductionWindow::IntroductionWindow() : wxFrame{
+Window::Window() : wxFrame{
 	// parent
 	nullptr,
 	// pid of the app
@@ -18,7 +18,7 @@ IntroductionWindow::IntroductionWindow() : wxFrame{
 	this->switchToSignInPanel();
 }
 
-void IntroductionWindow::switchToSignInPanel()
+void Window::switchToSignInPanel()
 {
 	if (join_panel) {
 		join_panel->Hide();
@@ -31,7 +31,7 @@ void IntroductionWindow::switchToSignInPanel()
 	sign_in_panel->Show();
 }
 
-void IntroductionWindow::switchToJoinPanel()
+void Window::switchToJoinPanel()
 {
 	if (sign_in_panel) {
 		sign_in_panel->Hide();
@@ -45,7 +45,7 @@ void IntroductionWindow::switchToJoinPanel()
 }
 
 // todo: research pointer deletion for wx elements. check if the parent class truly handles it for us
-IntroductionWindow::~IntroductionWindow()
+Window::~Window()
 {
 	if (sign_in_panel) {
 		delete sign_in_panel;

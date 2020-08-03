@@ -1,21 +1,24 @@
 #pragma once
 
 #include "wx/wx.h"
-#include "IntroductionWindow.h"
+#include "Window.h"
+#include "Router.h"
 
 class cApp :public wxApp
 {
 private:
-	IntroductionWindow* introduction_window{ nullptr };
+	Window* introduction_window{ nullptr };
 
 public:
 	bool OnInit()
 	{
-		introduction_window = new IntroductionWindow;
-		introduction_window->Show(true);
+		/*	introduction_window = new IntroductionWindow;
+			introduction_window->Show(true);*/
 
-		// bring the screen to the front 
-		//introduction_window->Raise();		//introduction_window->Raise();
+			// bring the screen to the front 
+			//introduction_window->Raise();		//introduction_window->Raise();
+
+		Router* r = Router::getInstance();
 
 		return true;
 	}

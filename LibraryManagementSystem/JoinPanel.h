@@ -2,7 +2,7 @@
 
 #include "wx/wx.h"
 #include "wx/statline.h"
-#include "IntroductionWindow.h"
+#include "Window.h"
 
 // use macro to calculate the position from the mockup
 #define MOCKUP_POSITION_JOIN(_x, _y)(wxPoint{_x - 260, _y - (799 + 30)})
@@ -10,7 +10,7 @@
 class JoinPanel : public GuestPanelBase
 {
 private:
-	IntroductionWindow* intro{ nullptr };
+	Window* intro{ nullptr };
 
 	// screen elements
 	wxStaticText* title{ nullptr };
@@ -52,7 +52,7 @@ public:
 	static const int WIDTH{ 316 };
 	static const int HEIGHT{ 578 };
 
-	JoinPanel(wxWindow* _parent, IntroductionWindow* _i) : intro{ _i }, GuestPanelBase{ _parent, WIDTH, HEIGHT } {}
+	JoinPanel(wxWindow* _parent, Window* _i) : intro{ _i }, GuestPanelBase{ _parent, WIDTH, HEIGHT } {}
 
 	void populatePanel();
 

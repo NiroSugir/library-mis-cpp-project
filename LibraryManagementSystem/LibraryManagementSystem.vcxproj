@@ -20,16 +20,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="constants.h" />
-    <ClCompile Include="IntroductionWindow.cpp" />
+    <ClCompile Include="Window.cpp" />
     <ClCompile Include="JoinPanel.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Router.cpp" />
     <ClCompile Include="SignInPanel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cApp.h" />
     <ClInclude Include="GuestPanelBase.h" />
-    <ClInclude Include="IntroductionWindow.h" />
+    <ClInclude Include="Window.h" />
     <ClInclude Include="JoinPanel.h" />
+    <ClInclude Include="Router.h" />
     <ClInclude Include="SignInPanel.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

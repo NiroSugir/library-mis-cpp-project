@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\windows">
-      <UniqueIdentifier>{1138fde8-c278-42cb-abed-a8f96731e3e2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\panels">
       <UniqueIdentifier>{2d3d8707-f827-419d-88b2-e43752ff8fbf}</UniqueIdentifier>
     </Filter>
@@ -23,9 +20,6 @@
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="IntroductionWindow.cpp">
-      <Filter>Header Files\windows</Filter>
     </ClCompile>
     <ClCompile Include="SignInPanel.cpp">
       <Filter>Header Files\panels</Filter>
@@ -36,13 +30,16 @@
     <ClCompile Include="constants.h">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="Router.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cApp.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IntroductionWindow.h">
-      <Filter>Header Files\windows</Filter>
     </ClInclude>
     <ClInclude Include="SignInPanel.h">
       <Filter>Header Files\panels</Filter>
@@ -52,6 +49,12 @@
     </ClInclude>
     <ClInclude Include="GuestPanelBase.h">
       <Filter>Header Files\panels</Filter>
+    </ClInclude>
+    <ClInclude Include="Router.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
