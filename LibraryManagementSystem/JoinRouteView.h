@@ -1,16 +1,21 @@
 #pragma once
 
+#include <vector>
 #include "wx/wx.h"
 #include "wx/statline.h"
 #include "Window.h"
+#include "JoinRouteModel.h"
 //#include "Router.h"
 
 // use macro to calculate the position from the mockup
 #define MOCKUP_POSITION_JOIN(_x, _y)(wxPoint{_x - 260, _y - (799 + 30)})
 
+using std::vector;
+using std::string;
+
 class JoinRouteView :public wxPanel {
 private:
-	//Window* intro{ nullptr };
+	JoinRouteModel* model{ nullptr };
 
 	// screen elements
 	wxStaticText* title{ nullptr };
@@ -29,6 +34,9 @@ private:
 
 	wxStaticText* label_password_verify{ nullptr };
 	wxTextCtrl* txt_password_verify{ nullptr };
+
+	wxStaticText* label_membership_type{ nullptr };
+	wxChoice* cbo_membership_type{ nullptr };
 
 	wxButton* btn_join{ nullptr };
 	wxButton* btn_clear{ nullptr };
@@ -54,7 +62,7 @@ private:
 	void onBackClicked(wxCommandEvent& evt);
 
 public:
-	JoinRouteView(Window* _window);
+	JoinRouteView(Window* _window, JoinRouteModel* _model);
 
 	void mount();
 

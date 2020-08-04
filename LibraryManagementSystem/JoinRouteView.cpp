@@ -1,6 +1,6 @@
 #include "JoinRouteView.h"
 
-JoinRouteView::JoinRouteView(Window* _window) : wxPanel{ _window, wxID_ANY, wxPoint{ 0, 0 }, wxSize{ 316, 578} } {
+JoinRouteView::JoinRouteView(Window* _window, JoinRouteModel* _model) : wxPanel{ _window, wxID_ANY, wxPoint{ 0, 0 }, wxSize{ 316, 578} }, model{ _model } {
 	_window->SetSize(wxSize{ 316, 578 });
 }
 
@@ -19,13 +19,21 @@ void JoinRouteView::mount() {
 	txt_username = new wxTextCtrl{ this, wxID_ANY, "", MOCKUP_POSITION_JOIN(296, 969), wxSize{ 248, 25 }, wxTE_CENTER };
 	txt_username->SetHint("Username");
 
-	label_password = new wxStaticText{ this, wxID_ANY, "Password:", MOCKUP_POSITION_JOIN(296, 1025 - 18), wxSize{ 234, 15 } };
-	txt_password = new wxTextCtrl{ this, wxID_ANY, "", MOCKUP_POSITION_JOIN(296, 1025), wxSize{ 248, 25 }, wxTE_CENTER | wxTE_PASSWORD };
+	label_password = new wxStaticText{ this, wxID_ANY, "Password:", MOCKUP_POSITION_JOIN(296, 1025 - 18), wxSize{ 120, 15 } };
+	txt_password = new wxTextCtrl{ this, wxID_ANY, "", MOCKUP_POSITION_JOIN(296, 1025), wxSize{ 120, 25 }, wxTE_CENTER | wxTE_PASSWORD };
 	txt_password->SetHint("Password");
 
-	label_password_verify = new wxStaticText{ this, wxID_ANY, "Verify Password:", MOCKUP_POSITION_JOIN(296, 1081 - 18), wxSize{ 234, 15 } };
-	txt_password_verify = new wxTextCtrl{ this, wxID_ANY, "", MOCKUP_POSITION_JOIN(296, 1081), wxSize{ 248, 25 }, wxTE_CENTER | wxTE_PASSWORD };
+	label_password_verify = new wxStaticText{ this, wxID_ANY, "Verify Password:", MOCKUP_POSITION_JOIN(423, 1025 - 18), wxSize{ 120, 15 } };
+	txt_password_verify = new wxTextCtrl{ this, wxID_ANY, "", MOCKUP_POSITION_JOIN(423, 1025), wxSize{ 120, 25 }, wxTE_CENTER | wxTE_PASSWORD };
 	txt_password_verify->SetHint("Verify Password");
+
+	label_membership_type = new wxStaticText{ this, wxID_ANY, "Membership Type:", MOCKUP_POSITION_JOIN(296, 1081 - 18), wxSize{ 234, 15 } };
+	cbo_membership_type = new wxChoice{ this, wxID_ANY, MOCKUP_POSITION_JOIN(296, 1081), wxSize{ 248, 25 } };
+	vector<string> membership_types{ model->get_membership_types() };
+	for (vector<string>::size_type i = 0; i != membership_types.size(); i++) {
+		cbo_membership_type->Insert(membership_types[i], i);
+	}
+	cbo_membership_type->SetSelection(0);
 
 	btn_join = new wxButton{ this, wxID_ANY, "Join", MOCKUP_POSITION_JOIN(296, 1137), wxSize{ 120, 32 } };
 	btn_clear = new wxButton{ this, wxID_ANY, "Clear", MOCKUP_POSITION_JOIN(424, 1137), wxSize{ 120, 32 } };

@@ -1,11 +1,13 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
 #include <memory>
 #include "Model.h"
 
 using std::unique_ptr;
 using std::string;
+using std::vector;
 
 class JoinRouteModel : public Model {
 	string* first_name{ nullptr };
@@ -31,4 +33,5 @@ public:
 
 	bool save_to_db();
 
+	vector<string> get_membership_types();
 };
