@@ -28,12 +28,12 @@ void JoinRouteView::mount() {
 	txt_password_verify->SetHint("Verify Password");
 
 	label_membership_type = new wxStaticText{ this, wxID_ANY, "Membership Type:", MOCKUP_POSITION_JOIN(296, 1081 - 18), wxSize{ 234, 15 } };
-	cbo_membership_type = new wxChoice{ this, wxID_ANY, MOCKUP_POSITION_JOIN(296, 1081), wxSize{ 248, 25 } };
+	cho_membership_type = new wxChoice{ this, wxID_ANY, MOCKUP_POSITION_JOIN(296, 1081), wxSize{ 248, 25 } };
 	vector<string> membership_types{ model->get_membership_types() };
 	for (vector<string>::size_type i = 0; i != membership_types.size(); i++) {
-		cbo_membership_type->Insert(membership_types[i], i);
+		cho_membership_type->Insert(membership_types[i], i);
 	}
-	cbo_membership_type->SetSelection(0);
+	cho_membership_type->SetSelection(0);
 
 	btn_join = new wxButton{ this, wxID_ANY, "Join", MOCKUP_POSITION_JOIN(296, 1137), wxSize{ 120, 32 } };
 	btn_clear = new wxButton{ this, wxID_ANY, "Clear", MOCKUP_POSITION_JOIN(424, 1137), wxSize{ 120, 32 } };
@@ -64,7 +64,6 @@ void JoinRouteView::bind() {
 	btn_clear->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &JoinRouteView::onClearClicked, this, wxID_ANY);
 	btn_back->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &JoinRouteView::onBackClicked, this, wxID_ANY);
 }
-
 
 void JoinRouteView::onEnterClicked(wxCommandEvent& evt)
 {

@@ -36,7 +36,7 @@ private:
 	wxTextCtrl* txt_password_verify{ nullptr };
 
 	wxStaticText* label_membership_type{ nullptr };
-	wxChoice* cbo_membership_type{ nullptr };
+	wxChoice* cho_membership_type{ nullptr };
 
 	wxButton* btn_join{ nullptr };
 	wxButton* btn_clear{ nullptr };
