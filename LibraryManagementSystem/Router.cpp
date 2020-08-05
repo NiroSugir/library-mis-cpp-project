@@ -1,4 +1,5 @@
 #include "Router.h"
+#include "constants.h"
 
 Router* Router::instance = nullptr;
 
@@ -23,6 +24,7 @@ void Router::switchToLoginRoute()
 		currentRouteController->dismount();
 	}
 
+	window->SetTitle(APP_NAME + ": Login");
 	currentRouteController = new LoginRouteController{ window };
 }
 
@@ -32,5 +34,6 @@ void Router::switchToJoinRoute()
 		currentRouteController->dismount();
 	}
 
+	window->SetTitle(APP_NAME + ": Join");
 	currentRouteController = new JoinRouteController{ window };
 }
