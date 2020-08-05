@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\panels">
-      <UniqueIdentifier>{2d3d8707-f827-419d-88b2-e43752ff8fbf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\guest-routes">
       <UniqueIdentifier>{121b18a4-7c17-4364-8678-f8757583e705}</UniqueIdentifier>
     </Filter>
@@ -45,58 +42,46 @@
     <ClCompile Include="constants.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="Router.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SignInPanel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="JoinPanel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Controller.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="View.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Model.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="JoinRouteView.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\guest-routes\join-route</Filter>
     </ClCompile>
     <ClCompile Include="JoinRouteController.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\guest-routes\join-route</Filter>
     </ClCompile>
     <ClCompile Include="JoinRouteModel.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\guest-routes\join-route</Filter>
     </ClCompile>
     <ClCompile Include="LoginRouteController.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\guest-routes\login-route</Filter>
     </ClCompile>
     <ClCompile Include="LoginRouteModel.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\guest-routes\login-route</Filter>
     </ClCompile>
     <ClCompile Include="LoginRouteView.cpp">
+      <Filter>Header Files\guest-routes\login-route</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Header Files\__mvc</Filter>
+    </ClCompile>
+    <ClCompile Include="View.cpp">
+      <Filter>Header Files\__mvc</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.cpp">
+      <Filter>Header Files\__mvc</Filter>
+    </ClCompile>
+    <ClCompile Include="Router.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cApp.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SignInPanel.h">
-      <Filter>Header Files\panels</Filter>
-    </ClInclude>
-    <ClInclude Include="JoinPanel.h">
-      <Filter>Header Files\panels</Filter>
-    </ClInclude>
-    <ClInclude Include="GuestPanelBase.h">
-      <Filter>Header Files\panels</Filter>
     </ClInclude>
     <ClInclude Include="Router.h">
       <Filter>Header Files</Filter>

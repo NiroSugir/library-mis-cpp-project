@@ -1,6 +1,4 @@
 #include "Window.h"
-//#include "SignInPanel.h"
-//#include "JoinPanel.h"
 #include "constants.h"
 
 // todo: retrive the application name from a constant

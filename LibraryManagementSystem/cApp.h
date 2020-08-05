@@ -7,25 +7,18 @@
 class cApp :public wxApp
 {
 private:
-	Window* introduction_window{ nullptr };
+	Window* window{ nullptr };
 
 public:
-	bool OnInit()
-	{
-		Router* r = Router::getInstance();
-		//r->switchToLoginRoute();
-		r->switchToJoinRoute();
-
-		return true;
-	}
+	bool OnInit();
 
 	// clean up all objects created by the app
 	// todo: research pointer deletion for wx elements. check if the parent class truly handles it for us
 	//int onExit()
 	//{
-	//	//if (introduction_window) {
-	//	//	delete introduction_window;
-	//	//	introduction_window = nullptr;
+	//	//if (window) {
+	//	//	delete window;
+	//	//	window = nullptr;
 	//	//}
 
 	//	return 0;

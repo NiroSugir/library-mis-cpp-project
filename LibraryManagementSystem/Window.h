@@ -1,7 +1,6 @@
 #pragma once
 
 #include "wx/wx.h"
-//#include "GuestPanelBase.h";
 
 class Window : public wxFrame
 {
