@@ -10,14 +10,7 @@ class JoinRouteController : public Controller
 	JoinRouteView* view{ nullptr };
 
 public:
-	JoinRouteController(Window* _window) :Controller{ _window }
-	{
-		JoinRouteModel* model = new JoinRouteModel;
-		JoinRouteView* view = new JoinRouteView{ _window, model };
-
-		view->mount();
-		view->bind();
-	}
+	JoinRouteController(Window* _window);
 
 	void dismount() {
 		//view->dismount();

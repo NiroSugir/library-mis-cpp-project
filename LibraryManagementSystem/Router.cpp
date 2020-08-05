@@ -17,6 +17,15 @@ Router* Router::getInstance()
 	return instance;
 }
 
+void Router::switchToLoginRoute()
+{
+	if (currentRouteController) {
+		currentRouteController->dismount();
+	}
+
+	currentRouteController = new LoginRouteController{ window };
+}
+
 void Router::switchToJoinRoute()
 {
 	if (currentRouteController) {
@@ -25,12 +34,3 @@ void Router::switchToJoinRoute()
 
 	currentRouteController = new JoinRouteController{ window };
 }
-
-//void Router::switchToLoginRoute()
-//{
-//	if (currentRouteController) {
-//		currentRouteController->dismount();
-//	}
-//
-//	currentRouteController = new LoginRouteController{ window };
-//}

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Window.h"
+#include "LoginRouteController.h"
 #include "JoinRouteController.h"
 
 class Router
@@ -26,5 +27,8 @@ public:
 
 	static Router* getInstance();
 
+	void switchToLoginRoute();
+
 	void switchToJoinRoute();
+
 };

@@ -75,6 +75,15 @@
     <ClCompile Include="JoinRouteModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LoginRouteController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginRouteModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginRouteView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cApp.h">
@@ -112,6 +121,15 @@
     </ClInclude>
     <ClInclude Include="JoinRouteModel.h">
       <Filter>Header Files\guest-routes\join-route</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginRouteController.h">
+      <Filter>Header Files\guest-routes\login-route</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginRouteModel.h">
+      <Filter>Header Files\guest-routes\login-route</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginRouteView.h">
+      <Filter>Header Files\guest-routes\login-route</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

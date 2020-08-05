@@ -13,7 +13,8 @@ public:
 	bool OnInit()
 	{
 		Router* r = Router::getInstance();
-		r->switchToJoinRoute();
+		r->switchToLoginRoute();
+		//r->switchToJoinRoute();
 
 		return true;
 	}

@@ -24,6 +24,9 @@
     <ClCompile Include="JoinRouteController.cpp" />
     <ClCompile Include="JoinRouteModel.cpp" />
     <ClCompile Include="JoinRouteView.cpp" />
+    <ClCompile Include="LoginRouteController.cpp" />
+    <ClCompile Include="LoginRouteModel.cpp" />
+    <ClCompile Include="LoginRouteView.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="View.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -39,6 +42,9 @@
     <ClInclude Include="JoinRouteController.h" />
     <ClInclude Include="JoinRouteModel.h" />
     <ClInclude Include="JoinRouteView.h" />
+    <ClInclude Include="LoginRouteController.h" />
+    <ClInclude Include="LoginRouteModel.h" />
+    <ClInclude Include="LoginRouteView.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="View.h" />
     <ClInclude Include="Window.h" />
