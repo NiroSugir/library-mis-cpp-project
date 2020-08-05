@@ -4,8 +4,8 @@
 #include "wx/wx.h"
 #include "wx/statline.h"
 #include "Window.h"
+#include "JoinRouteController.h"
 #include "JoinRouteModel.h"
-//#include "Router.h"
 
 // use macro to calculate the position from the mockup
 #define MOCKUP_POSITION_JOIN(_x, _y)(wxPoint{_x - 260, _y - (799 + 30)})
@@ -13,8 +13,11 @@
 using std::vector;
 using std::string;
 
+class JoinRouteController;
+
 class JoinRouteView :public wxPanel {
 private:
+	JoinRouteController* controller{ nullptr };
 	JoinRouteModel* model{ nullptr };
 
 	// screen elements
@@ -62,10 +65,12 @@ private:
 	void onBackClicked(wxCommandEvent& evt);
 
 public:
-	JoinRouteView(Window* _window, JoinRouteModel* _model);
+	JoinRouteView(Window* _window, JoinRouteController* _controller, JoinRouteModel* _model);
 
 	void mount();
 
 	void bind();
+
+	void dismount();
 };
 

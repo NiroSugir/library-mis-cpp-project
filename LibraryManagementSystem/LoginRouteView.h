@@ -5,8 +5,8 @@
 #include "wx/statline.h"
 #include "constants.h"
 #include "Window.h"
+#include "LoginRouteController.h"
 #include "LoginRouteModel.h"
-//#include "Router.h"
 
 // use macro to calculate the position from the mockup
 #define MOCKUP_POSITION_LOGIN(_x, _y)(wxPoint{_x - 260, _y - (96 + 30)})
@@ -14,11 +14,15 @@
 using std::vector;
 using std::string;
 
+// avoid circular dependancy issues
+class LoginRouteController;
+
 class LoginRouteView :public wxPanel {
 private:
 	const int WIDTH = 316;
 	const int HEIGHT = 578;
 
+	LoginRouteController* controller{ nullptr };
 	LoginRouteModel* model{ nullptr };
 
 	// screen elements
@@ -56,11 +60,13 @@ private:
 	void onJoinClicked(wxCommandEvent& evt);
 
 public:
-	LoginRouteView(Window* _window, LoginRouteModel* _model);
+	LoginRouteView(Window* _window, LoginRouteController* _controller, LoginRouteModel* _model);
 
 	void mount();
 
 	void bind();
+
+	void dismount();
 
 };
 

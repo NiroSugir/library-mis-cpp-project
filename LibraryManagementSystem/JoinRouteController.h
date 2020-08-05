@@ -4,6 +4,9 @@
 #include "JoinRouteView.h"
 #include "JoinRouteModel.h"
 
+class JoinRouteModel;
+class JoinRouteView;
+
 class JoinRouteController : public Controller
 {
 	JoinRouteModel* model{ nullptr };
@@ -12,7 +15,7 @@ class JoinRouteController : public Controller
 public:
 	JoinRouteController(Window* _window);
 
-	void dismount() {
-		//view->dismount();
-	}
+	void switchToLoginRoute();
+
+	void dismount();
 };

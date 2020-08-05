@@ -1,10 +1,12 @@
 #include "JoinRouteView.h"
 
-JoinRouteView::JoinRouteView(Window* _window, JoinRouteModel* _model) : wxPanel{ _window, wxID_ANY, wxPoint{ 0, 0 }, wxSize{ 316, 578} }, model{ _model } {
+JoinRouteView::JoinRouteView(Window* _window, JoinRouteController* _controller, JoinRouteModel* _model) : wxPanel{ _window, wxID_ANY, wxPoint{ 0, 0 }, wxSize{ 316, 578} }, controller{ _controller }, model{ _model } {
 	_window->SetSize(wxSize{ 316, 578 });
 }
 
 void JoinRouteView::mount() {
+	this->Hide();
+
 	title = new wxStaticText{ this, wxID_ANY, "Join",  MOCKUP_POSITION_JOIN(296, 853) , wxSize{ 84, 36 } };
 
 	label_first_name = new wxStaticText{ this, wxID_ANY, "First Name:", MOCKUP_POSITION_JOIN(296, 913 - 18), wxSize{ 120, 15 } };
@@ -56,6 +58,8 @@ void JoinRouteView::mount() {
 	copyright_message->SetFont(copyright_font);
 
 	txt_first_name->SetFocus();
+
+	this->Show();
 }
 
 void JoinRouteView::bind() {
@@ -63,6 +67,11 @@ void JoinRouteView::bind() {
 	btn_join->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &JoinRouteView::onEnterClicked, this, wxID_ANY);
 	btn_clear->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &JoinRouteView::onClearClicked, this, wxID_ANY);
 	btn_back->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &JoinRouteView::onBackClicked, this, wxID_ANY);
+}
+
+void JoinRouteView::dismount()
+{
+	this->Hide();
 }
 
 void JoinRouteView::onEnterClicked(wxCommandEvent& evt)
@@ -87,8 +96,5 @@ void JoinRouteView::onClearClicked(wxCommandEvent& evt)
 
 void JoinRouteView::onBackClicked(wxCommandEvent& evt)
 {
-	//Router* r = Router::getInstance();
-
-	// todo: implement routing to different screens
-	//r->switchToSignInPanel();
+	controller->switchToLoginRoute();
 }

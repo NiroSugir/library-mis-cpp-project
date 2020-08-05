@@ -19,14 +19,16 @@ void LoginRouteView::onClearClicked(wxCommandEvent& evt)
 
 void LoginRouteView::onJoinClicked(wxCommandEvent& evt)
 {
-	// TODO: get router to switch to join route
+	controller->switchToJoinRoute();
 }
 
-LoginRouteView::LoginRouteView(Window* _window, LoginRouteModel* _model) : wxPanel{ _window, wxID_ANY, wxPoint{ 0, 0 }, wxSize{ WIDTH, HEIGHT } }, model{ _model } {
-	_window->SetSize(wxSize{ WIDTH, HEIGHT });
+LoginRouteView::LoginRouteView(Window* _window, LoginRouteController* _controller, LoginRouteModel* _model) : wxPanel{ _window, wxID_ANY, wxPoint{ 0, 0 }, wxSize{ 316, 578} }, controller{ _controller }, model{ _model } {
+	_window->SetSize(wxSize{ 316, 578 });
 }
 
 void LoginRouteView::mount() {
+	this->Hide();
+
 	title = new wxStaticText{ this, wxID_ANY, "Sign In",  MOCKUP_POSITION_LOGIN(296, 150) , wxSize{ 84, 36 } };
 	message = new wxStaticText{ this, wxID_ANY, "Welcome back to " + APP_NAME + "!", MOCKUP_POSITION_LOGIN(296, 188), wxSize{ 234, 22 } };
 
@@ -58,6 +60,8 @@ void LoginRouteView::mount() {
 	txt_password->SetFont(textbox_font);
 	btn_join->SetFont(join_button_font);
 	copyright_message->SetFont(copyright_font);
+
+	this->Show();
 }
 
 void LoginRouteView::bind() {
@@ -65,5 +69,10 @@ void LoginRouteView::bind() {
 	btn_enter->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &LoginRouteView::onEnterClicked, this, wxID_ANY);
 	btn_clear->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &LoginRouteView::onClearClicked, this, wxID_ANY);
 	btn_join->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &LoginRouteView::onJoinClicked, this, wxID_ANY);
+}
+
+void LoginRouteView::dismount()
+{
+	this->Hide();
 }
 
